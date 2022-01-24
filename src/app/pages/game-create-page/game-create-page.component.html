@@ -1,0 +1,47 @@
+<div class="container">
+  <h2 class="text-center mt-3">Ajout d'un nouveau jeu</h2>
+  <div class="row justify-content-center mt-3">
+    <div class="col-7">
+      <form (ngSubmit)="game.valid && addGame()" [formGroup]="game" #myForm="ngForm">
+        <div class="text-center text-success" *ngIf="game.valid && myForm.submitted" >
+          Le jeu "{{ newGame.name }}" a bien été créé !
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="name">Nom :</label>
+          <input id="name" class="form-control" name="name" formControlName="name" type="text" placeholder="Final Fantasy VII">
+        </div>
+        <div *ngIf="game.controls['name'].errors && myForm.submitted">
+          <div class="text-center text-danger my-3" *ngIf="game.controls['name'].errors['required']">
+            Le nom du jeu est requis
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="cover">Pochette du jeu :</label>
+          <input id="cover" class="form-control" name="cover" formControlName="cover" type="text" placeholder="http://...">
+        </div>
+        <div *ngIf="game.controls['cover'].errors && myForm.submitted">
+          <div class="text-center text-danger my-3" *ngIf="game.controls['cover'].errors['required']">
+            Le lien de la pochette est requise
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="rating">Note :</label>
+          <input class="form-control" id="rating" name="rating" formControlName="rating" type="number" placeholder="5.3">
+        </div>
+        <div *ngIf="game.controls['rating'].errors && myForm.submitted">
+          <div class="text-center text-danger my-3" *ngIf="game.controls['rating'].errors['required']">
+            La note est requise
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <div class="m-1">
+            <button [ngClass]="{'btn' : true, 'btn-danger' : myForm.invalid, 'btn-success' : myForm.valid}">Ajouter</button>
+          </div>
+          <div class="m-1">
+            <a  class="btn btn-secondary" [routerLink]="['/games']">retour</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-center">Liste des jeux</h1>
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-2 card m-2" (click)="getGame(game)" *ngFor="let game of games">
+      <div>ghdgfhhghdfghgdfh</div>
+      <div><img class="cover" src="{{game.cover}}" alt="Image du jeu"></div>
+    </div>
+  </div>
+</div>
