@@ -20,5 +20,7 @@ export class GamesPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("toto");
+    console.log(this.gameList);
   }
 }

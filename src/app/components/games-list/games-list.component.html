@@ -1,10 +1,14 @@
 <div class="container">
-  <h1 class="text-center">Liste des jeux</h1>
+  <div class="d-flex justify-content-between mt-3">
+    <h2>Liste des Jeux</h2>
+    <div>
+      <a class="btn btn-secondary" [routerLink]="['/create']">Nouveau jeu</a>
+    </div>
+  </div>
 
   <div class="row justify-content-center mt-3">
-    <div class="col-2 card m-2" (click)="getGame(game)" *ngFor="let game of games">
-      <div>ghdgfhhghdfghgdfh</div>
-      <div><img class="cover" src="{{game.cover}}" alt="Image du jeu"></div>
+    <div class="col-2  m-2" (click)="getGame(game)" *ngFor="let game of games">
+      <div><img class="cover rounded" src="{{game.cover}}" alt="Image du jeu"></div>
     </div>
   </div>
 </div>

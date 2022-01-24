@@ -18,7 +18,7 @@ export class GameCreatePageComponent implements OnInit {
     this.game = this.fb.group({
       name: ["", Validators.required],
       cover: ["", Validators.required],
-      description: ["", Validators.required]
+      rating: ["", Validators.required]
     });
   }
 
@@ -27,5 +27,4 @@ export class GameCreatePageComponent implements OnInit {
     this.gamesService.addGame(this.game.value);
     this.newGame = this.game.value;
   }
-
 }
