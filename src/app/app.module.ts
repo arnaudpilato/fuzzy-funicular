@@ -11,6 +11,7 @@ import { GamesPageComponent } from './pages/games-page/games-page.component';
 import {ROUTES} from "./app.routes";
 import { GameCreatePageComponent } from './pages/game-create-page/game-create-page.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ApiFormComponent } from './pages/api-form/api-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     GamesListComponent,
     NavBarComponent,
     GamesPageComponent,
-    GameCreatePageComponent
+    GameCreatePageComponent,
+    ApiFormComponent
   ],
   imports: [
     BrowserModule,
